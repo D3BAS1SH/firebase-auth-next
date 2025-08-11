@@ -66,6 +66,10 @@ export const setupRecaptcha = (containerId: string = 'recaptcha-container'): Rec
 
 export const sendPhoneVerificationCode = async (phoneNumber: string, appVerifier: RecaptchaVerifier): Promise<ConfirmationResult> => {
     try {
+        console.log(auth);
+        console.log(phoneNumber);
+        console.log("--------App verifier------");
+        console.log(appVerifier);
         const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, appVerifier);
         return confirmationResult;
     } catch (error: any) {
